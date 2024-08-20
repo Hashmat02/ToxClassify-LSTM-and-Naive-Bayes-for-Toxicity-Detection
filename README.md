@@ -8,7 +8,7 @@ Recognizing the importance of term significance in our text classification task,
 Moving on to model development, we implemented a Binary Relevance approach with Naive Bayes as the classifier. This strategy treated each label as an independent binary classification problem, leveraging the simplicity of Naive Bayes, particularly the Multinomial Naive Bayes variant known for its suitability with text data.
 The model was trained on TF-IDF transformed data, where each document was represented as a numerical vector emphasizing the importance of terms. The evaluation process included calculating metrics such as accuracy, AUC, and log loss for each individual label. Additionally, a detailed classification report and provided insights into the model's predictive capabilities and areas for improvement.
 
-<img src="image.png" alt="alt text" width="200">
+<img src="image.png" alt="alt text" width="400">
 
 The model demonstrated notable strengths, achieving high accuracy of 0.919 and AUC 0.896 on the test set. The model showed high precision in identifying 'toxic' and 'obscene' labels, indicating a low false positive rate for these categories. The recall was notably lower for most labels, especially 'threat' and 'identity_hate', suggesting challenges in identifying all relevant instances of these categories. The F1-score, which balances precision and recall, was highest for 'obscene' and lowest for 'threat', highlighting areas where the model performed well and where improvements are needed.
 This prompted a thorough examination of the model's performance, leading us to acknowledge the limitations of the Naive Bayes approach. Notably, its assumption of label independence and the lack of consideration for the sequential nature of text data became apparent.
@@ -20,7 +20,7 @@ In this approach, our objective was to develop an LSTM-based model for this data
 Experimentation with different undersampling percentages revealed a delicate balance. Higher percentages led to a failure in detecting minority classes, reducing the model's effectiveness to a binary toxic/non-toxic classification. Conversely, lower percentages hindered the model's ability to generalize on toxic/non-toxic predictions due to the sparse representation of non-toxic data. Our final model, which maintained a null class undersampling rate of 38%, struck a balance that improved precision and recall for minority classes without significantly compromising overall model performance.
 The class-wise precision accuracy metrics for the final model are presented below:
 
-<img src="image-1.png" alt="alt text" width="200">
+<img src="image-1.png" alt="alt text" width="400">
 
 To assess the model's discriminatory power, ROC curves were plotted for each class, and the area under the curve (AUC) was calculated. The AUC scores for each class and the mean ROC AUC across all classes are presented:
 
